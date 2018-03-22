@@ -7,19 +7,20 @@ void merge(int*, int, int,int);
 using namespace std;
 int main()
 {
-	int* source = new int[10];
+	int length = 3;
+	int* source = new int[length];
 	srand(unsigned(time(NULL)));
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < length; i++)
 	{
 		source[i] = rand();
 	}
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < length; i++)
 	{
 		cout << source[i] << " ";
 	}
 	cout << endl;
-	merge_sort(source, 0, 9);
-	for (int i = 0; i < 10; i++)
+	merge_sort(source, 0, length-1);
+	for (int i = 0; i < length; i++)
 	{
 		cout << source[i] << " ";
 	}
@@ -34,8 +35,9 @@ void merge_sort(int*source, int p, int r)
 	{
 		merge_sort(source, p, q);
 		merge_sort(source, q + 1, r);
+		merge(source, p, q, r);
 	}
-	merge(source, p, q, r);
+	
 }
 void merge(int* source,int p, int q,int r)
 {
@@ -50,10 +52,10 @@ void merge(int* source,int p, int q,int r)
 	LeftArray[LeftLength] = INT32_MAX;
 	for (int i = 0; i < RightLength; i++)
 	{
-		RightArray[i] = source[q];
+		RightArray[i] = source[q+1+i];
 	}
 	RightArray[RightLength] = INT32_MAX;
-	for (int i = 0,j=0,k=0; k < r; k++)
+	for (int i = 0,j=0,k=p; k <= r; k++)
 	{
 		if (LeftArray[i] <= RightArray[j])
 		{
