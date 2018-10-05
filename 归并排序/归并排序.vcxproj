@@ -118,6 +118,8 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CountingSort.h" />
+    <ClInclude Include="HeapSort.h" />
     <ClInclude Include="merge.h" />
     <ClInclude Include="QuickSort.h" />
   </ItemGroup>

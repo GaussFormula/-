@@ -5,6 +5,7 @@
 
 #include "QuickSort.h"
 #include "HeapSort.h"
+#include "CountingSort.h"
 
 #define random(x) (rand()%x)
 using namespace std;
@@ -21,7 +22,8 @@ int main()
 		cout << *it<<" ";
 	}
 	cout << endl;
-	HeapSort(&v, &v1);
+	CountingSort(v, v1, 100);
+	//HeapSort(&v, &v1);
 	for (vector<int>::iterator it = v1.begin(); it != v1.end(); it++)
 	{
 		cout << *it << " ";
