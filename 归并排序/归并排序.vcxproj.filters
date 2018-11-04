@@ -32,5 +32,8 @@
     <ClInclude Include="CountingSort.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Randomized_Select.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
