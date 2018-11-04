@@ -18,54 +18,54 @@ inline int Parent(int i)
 }
 
 //template<typename T>
-void Max_Heapify(vector<int>*p,int i)
+void Max_Heapify(vector<int>&p,int i)
 {
 	int left = LeftChild(i + 1);
 	int right = RightChild(i + 1);
 	int largest = -1;
-	if (left <= p->size() && (*p)[left - 1] > (*p)[i])
+	if (left <= p.size() && p[left - 1] > p[i])//当下标不越界且左孩子大于父节点
 	{
-		largest = left - 1;
+		largest = left - 1;//说明最大值出现在左孩子
 	}
-	else
+	else//否则 将最大值的下标设为i
 	{
 		largest = i;
 	}
-	if (right <= p->size() && (*p)[right - 1] > (*p)[largest])
+	if (right <= p.size() && p[right - 1] > p[largest])//再次判断上一轮所得的最大值与右孩子的大小关系
 	{
-		largest = right - 1;
+		largest = right - 1;//若右孩子大于最大值，则更新最大值
 	}
-	if (largest != i)
-	{
-		int store = (*p)[largest];
-		(*p)[largest] = (*p)[i];
-		(*p)[i] = store;
+	if (largest != i)//最大值下标为i（即父节点）说明最大值是父节点
+	{//反之则需要修改父节点、左右孩子之间的位置关系
+		int store = p[largest];
+		p[largest] = p[i];
+		p[i] = store;
 		//swap((p + largest), (p + i));
 		Max_Heapify(p, largest);
 	}
 }
 
 //template<typename T>
-void BuildMaxHeap(vector<int>* p)
+void BuildMaxHeap(vector<int>& p)
 {
-	for (int i = (p->size()) / 2 - 1; i >= 0; i--)
+	for (int i = (p.size()) / 2 - 1; i >= 0; i--)
 	{
 		Max_Heapify(p, i);
 	}
 }
 
 //template<typename T>
-void HeapSort(vector<int>* p,vector<int>* q)
+void HeapSort(vector<int>& p,vector<int>& q)
 {
 	BuildMaxHeap(p);
-	for (int i = p->size() - 1; i >= 0; i--)
+	for (int i = p.size() - 1; i >= 0; i--)
 	{
-		int store = (*p)[0];
-		(*p)[0] = (*p)[i];
-		(*p)[i] = store;
+		int store = p[0];
+		p[0] = p[i];
+		p[i] = store;
 		//swap(p, p + i);
-		q->push_back((*p)[p->size()-1]);
-		p->pop_back();
+		q.push_back(p[p.size()-1]);
+		p.pop_back();
 		Max_Heapify(p, 0);
 	}
 }
