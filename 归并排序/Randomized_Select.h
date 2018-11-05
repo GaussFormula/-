@@ -1,7 +1,4 @@
 #pragma once
-#include "QuickSort.h"
-
-
 #include <time.h>
 using namespace std;
 

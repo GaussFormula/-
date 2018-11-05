@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-void QuickSort(vector<int>& source, int length,int Left,int Right)
+void QuickSort(vector<int>& source,int Left,int Right)
 {
 	if (Left >= Right)//当左下标等于右下标时，说明数组此时只有一个元素，排序结束
 	{
@@ -20,6 +20,6 @@ void QuickSort(vector<int>& source, int length,int Left,int Right)
 		
 	}
 	swap(source[i + 1], source[Right]);//将主元放在两个区间中间
-	QuickSort(source, length, Left, i);//递归求解左区间
-	QuickSort(source, length, i+2, Right);//递归求解右区间
+	QuickSort(source, Left, i);//递归求解左区间
+	QuickSort(source, i+2, Right);//递归求解右区间
 }
