@@ -7,6 +7,7 @@
 #include "HeapSort.h"
 #include "CountingSort.h"
 #include "Randomized_Select.h"
+#include "MorrisTraversal.h"
 
 #define random(x) (rand()%x)
 using namespace std;
@@ -35,7 +36,8 @@ int main()
 	{
 		cout << *it << " ";
 	}*/
-	cout << Randomized_Select(v, 0, v.size() - 1, 6);
+	cout << Randomized_Select(v, 0, v.size() - 1, 6) << endl;
+	MorrisTraversalTest();
 	getchar();
 	return 0;
 }

@@ -116,11 +116,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MorrisTraversal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinaryTreeNode.h" />
     <ClInclude Include="CountingSort.h" />
     <ClInclude Include="HeapSort.h" />
     <ClInclude Include="merge.h" />
+    <ClInclude Include="MorrisTraversal.h" />
     <ClInclude Include="QuickSort.h" />
     <ClInclude Include="Randomized_Select.h" />
   </ItemGroup>
