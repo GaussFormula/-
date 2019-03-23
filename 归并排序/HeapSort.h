@@ -37,10 +37,7 @@ void Max_Heapify(vector<int>&p,int i)
 	}
 	if (largest != i)//最大值下标为i（即父节点）说明最大值是父节点
 	{//反之则需要修改父节点、左右孩子之间的位置关系
-		int store = p[largest];
-		p[largest] = p[i];
-		p[i] = store;
-		//swap((p + largest), (p + i));
+		std::swap(p[largest],p[i]);
 		Max_Heapify(p, largest);
 	}
 }
@@ -60,10 +57,10 @@ void HeapSort(vector<int>& p,vector<int>& q)
 	BuildMaxHeap(p);
 	for (int i = p.size() - 1; i >= 0; i--)
 	{
-		int store = p[0];
+		/*int store = p[0];
 		p[0] = p[i];
-		p[i] = store;
-		//swap(p, p + i);
+		p[i] = store;*/
+		swap(p[0], p[i]);
 		q.push_back(p[p.size()-1]);
 		p.pop_back();
 		Max_Heapify(p, 0);

@@ -25,18 +25,18 @@ int main()
 	}
 	cout << endl;
 	//CountingSort(v, v1, 100);
-	//HeapSort(&v, &v1);
+	HeapSort(v, v1);
 	//QuickSort(v, v.size(), 0, v.size() - 1);
 	/*for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
 	{
 		cout << *it << " ";
 	}
 	cout << endl;*/
-	/*for (vector<int>::iterator it = v1.begin(); it != v1.end(); it++)
+	for (vector<int>::iterator it = v1.begin(); it != v1.end(); it++)
 	{
 		cout << *it << " ";
-	}*/
-	cout << Select(v, 0, v.size() - 1, 6);
+	}
+	//cout << Select(v, 0, v.size() - 1, 6);
 	getchar();
 	return 0;
 }
