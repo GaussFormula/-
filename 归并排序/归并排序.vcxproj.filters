@@ -47,5 +47,8 @@
     <ClInclude Include="MorrisTraversal.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="LinearTimeSelect.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

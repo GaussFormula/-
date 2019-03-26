@@ -127,6 +127,7 @@
     <ClInclude Include="BinaryTreeNode.h" />
     <ClInclude Include="CountingSort.h" />
     <ClInclude Include="HeapSort.h" />
+    <ClInclude Include="LinearTimeSelect.h" />
     <ClInclude Include="merge.h" />
     <ClInclude Include="MorrisTraversal.h" />
     <ClInclude Include="QuickSort.h" />
